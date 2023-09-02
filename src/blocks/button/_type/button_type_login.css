@@ -1,0 +1,8 @@
+.button_type_login {
+  padding: 0;
+  background: var(--green);
+  color: var(--black);
+  border: none;
+  width: 76px;
+  height: 32px;
+}

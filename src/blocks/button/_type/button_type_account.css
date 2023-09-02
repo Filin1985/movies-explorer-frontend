@@ -1,0 +1,7 @@
+.button_type_account {
+  background-color: var(--button-gray);
+  width: 100px;
+  height: 32px;
+  border-radius: 20px;
+  font-size: 12px;
+}

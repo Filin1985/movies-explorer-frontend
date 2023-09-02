@@ -1,0 +1,9 @@
+.movies {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.movies__divider {
+  margin-top: 69px;
+}

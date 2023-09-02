@@ -1,0 +1,78 @@
+.account {
+  display: flex;
+  height: 635px;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.account__title {
+  font-size: 24px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: normal;
+  margin: 0;
+}
+
+.account__set {
+  display: flex;
+  flex-direction: column;
+  gap: 17px;
+  padding: 0;
+  border: none;
+  margin: 120px 0 220px 0;
+}
+
+.account__item {
+  font-size: 11px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+  text-rendering: optimizeLegibility;
+  border: none;
+  padding: 0;
+  text-align: right;
+  width: 100%;
+}
+
+.account__item_el_name {
+  padding-bottom: 16px;
+}
+
+.account__field {
+  font-size: 11px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: normal;
+  width: 50px;
+  text-rendering: optimizeLegibility;
+}
+
+.account__box {
+  display: flex;
+  width: 410px;
+  position: relative;
+}
+
+.account__box:first-of-type {
+  border-bottom: 1px solid var(--middle-gray);
+}
+
+.account__item:focus {
+  outline: none;
+}
+.account__buttons {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.account__account {
+  color: var(--pink);
+  font-size: 13px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: normal;
+  text-align: center;
+  text-decoration: none;
+}
