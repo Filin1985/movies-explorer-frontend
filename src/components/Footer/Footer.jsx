@@ -1,8 +1,13 @@
-import { Link } from 'react-router-dom'
+import { Link, useLocation } from 'react-router-dom'
+import { cardRoutes } from '../../utils/constants'
 
 const Footer = () => {
+    const location = useLocation()
+
+    const savedMoviesClass = cardRoutes.includes(location.pathname) ? 'footer section_background_gray footer__height_more' : 'footer section_background_gray'
+
     return (
-        <footer className='footer section_background_gray section_height_less'>
+        <footer className={savedMoviesClass}>
             <h5 className='footer__title'>Учебный проект Яндекс.Практикум х BeatFilm.</h5>
             <div className='footer__container'>
                 <p className='footer__copyright'>

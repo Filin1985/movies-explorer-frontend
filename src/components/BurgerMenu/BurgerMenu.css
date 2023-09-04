@@ -48,12 +48,21 @@
   .burger__content {
     display: none;
   }
-}
 
-@media screen and (max-width: 768px) {
   .burger__content_open {
     flex-direction: column;
     align-items: center;
     display: flex;
+  }
+}
+
+@media screen and (max-width: 320px) {
+  .burger__list {
+    margin-top: 144px;
+    gap: 24px;
+  }
+
+  .burger__content {
+    gap: 444px;
   }
 }

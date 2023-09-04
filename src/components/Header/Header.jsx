@@ -18,15 +18,15 @@ const Header = ({ isLoggedIn }) => {
   }
 
   const isBurgerMenu = isLoggedIn && isMenuOpen
-  const headerBurgerClassType = headerClassNameType ? 'button header__burger_black' : 'button header__burger'
+  const headerBurgerClassType = headerClassNameType ? 'button header__burger header__burger_black' : 'button header__burger'
 
   return (
     <header className={`header ${headerClassNameType}`}>
       <Link to='/'>
         <img src={logo} alt="Logo" />
       </Link>
-      {!isLoggedIn ?
-        <div className='header__auth'>
+      {isLoggedIn ?
+        <>
           <div className='header__list header_display_none'>
             <Link to='/movies' className={`header__link header__movies ${headerClassNameType}`}>Фильмы</Link>
             <Link to='/saved-movies' className={`header__link header__movies ${headerClassNameType}`}> Сохраненные фильмы</Link>
@@ -44,7 +44,7 @@ const Header = ({ isLoggedIn }) => {
             aria-label='menu'
             onClick={handleOpenMenu}
           ></button>
-        </div> : <div className='header__unauth'>
+        </> : <div className='header__unauth'>
           <Link className='header__link header__register' to='/signup'>
             Регистрация
           </Link>

@@ -5,7 +5,7 @@ import { useState } from 'react'
 import MoviesCardList from '../Movies/MoviesCardList/MoviesCardList'
 
 const SavedMovies = () => {
-    const [savedMovies, setSavedMovies] = useState([...Array(3)])
+    const [savedMovies, setSavedMovies] = useState([...Array(2)])
 
     return (
         <section className='movies section'>

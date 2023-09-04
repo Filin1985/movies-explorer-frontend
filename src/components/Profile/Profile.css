@@ -12,6 +12,7 @@
   font-weight: 500;
   line-height: normal;
   margin: 0;
+  text-align: center;
 }
 
 .account__set {
@@ -84,5 +85,27 @@
 
   .account__set {
     margin: 96px 0 210px 0;
+  }
+}
+
+@media screen and (max-width: 450px) {
+  .account {
+    height: 738px;
+  }
+
+  .account__box {
+    width: 260px;
+  }
+
+  .account__set {
+    margin: 80px 0 379px 0;
+  }
+
+  .account__register {
+    font-size: 12px;
+  }
+
+  .account__account {
+    font-size: 12px;
   }
 }

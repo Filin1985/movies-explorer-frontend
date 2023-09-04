@@ -6,16 +6,26 @@
   padding: 0;
   margin: 80px 0 0 0;
   display: grid;
-  justify-content: start;
-  grid-template-columns: repeat(auto-fit, 270px);
+  grid-template-columns: repeat(auto-fill, minmax(270px, auto));
   row-gap: 30px;
   column-gap: 20px;
+  width: 100%;
 }
 
 @media screen and (max-width: 768px) {
   .cards__elements {
-    grid-template-columns: repeat(auto-fit, 339px);
+    grid-template-columns: repeat(auto-fit, minmax(339px, auto));
     column-gap: 30px;
     row-gap: 34px;
+    justify-items: center;
+  }
+}
+
+@media screen and (max-width: 430px) {
+  .cards__elements {
+    grid-template-columns: repeat(auto-fit, minmax(300px, auto));
+    justify-items: normal;
+    margin-top: 50px;
+    row-gap: 19px;
   }
 }

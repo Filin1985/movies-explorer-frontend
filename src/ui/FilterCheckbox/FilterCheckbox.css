@@ -60,3 +60,10 @@
 .movies__toggle {
   margin-top: 42px;
 }
+
+@media screen and (max-width: 320px) {
+  .toggle__label {
+    font-size: 11px;
+    line-height: 18px;
+  }
+}
