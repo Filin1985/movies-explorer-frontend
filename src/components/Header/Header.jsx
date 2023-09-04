@@ -23,7 +23,7 @@ const Header = ({ isLoggedIn }) => {
   return (
     <header className={`header ${headerClassNameType}`}>
       <Link to='/'>
-        <img src={logo} alt="Logo" />
+        <img src={logo} alt="Logo" className='header__logo' />
       </Link>
       {isLoggedIn ?
         <>
@@ -52,7 +52,7 @@ const Header = ({ isLoggedIn }) => {
             Войти
           </Link>
         </div>}
-      {isMenuOpen && <BurgerMenu isBurgerMenu={isBurgerMenu} />}
+      {isMenuOpen && <BurgerMenu isBurgerMenu={isBurgerMenu} setIsMenuOpen={setIsMenuOpen} />}
     </header>
   )
 }

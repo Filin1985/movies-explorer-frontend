@@ -19,6 +19,10 @@
   gap: 30px;
 }
 
+.header__logo:hover {
+  opacity: 0.8;
+}
+
 .header__link {
   cursor: pointer;
   font-size: 12px;

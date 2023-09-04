@@ -78,6 +78,25 @@
   text-decoration: none;
 }
 
+.account__save {
+  width: 100%;
+  max-width: 410px;
+  background-color: var(--blue);
+  color: var(--white);
+  padding: 13px 0 15px 0;
+  border-radius: 3px;
+}
+
+.account__save:hover {
+  opacity: 0.8;
+}
+
+.account__save_disabled {
+  background-color: #f8f8f8;
+  color: #c2c2c2;
+  cursor: none;
+}
+
 @media screen and (max-width: 768px) {
   .account {
     height: 917px;

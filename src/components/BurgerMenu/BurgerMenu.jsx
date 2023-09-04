@@ -1,16 +1,31 @@
-import React from 'react'
+import React, { useEffect, useState } from 'react'
 import { Link, NavLink } from 'react-router-dom'
 
-const BurgerMenu = (props) => {
+const BurgerMenu = ({ isBurgerMenu, setIsMenuOpen }) => {
+    const [width, setWidth] = useState(window.innerWidth)
+
+    useEffect(() => {
+        if (width >= 768) {
+            setIsMenuOpen(false)
+        }
+        const handleClose = (event) => {
+            setWidth(window.innerWidth)
+        }
+
+        window.addEventListener('resize', handleClose)
+
+        return () => {
+            window.removeEventListener('resize', handleClose)
+        }
+    }, [width, setIsMenuOpen])
+
+    const burgerClassName = isBurgerMenu ? 'burger__content burger__content_open' : 'burger__content'
+
     return (
         <>
             <div className='burger__overlay'></div>
             <div
-                className={
-                    props.isBurgerMenu
-                        ? 'burger__content burger__content_open'
-                        : 'burger__content'
-                }
+                className={burgerClassName}
             >
                 <nav className='burger__list'>
                     <NavLink to='/' className={`burger__link`}>Главная</NavLink>

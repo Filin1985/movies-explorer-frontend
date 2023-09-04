@@ -32,21 +32,23 @@ function App() {
     <CurrentUserContext.Provider value={{ currentUser }}>
       <div className='page'>
         {isHeaderVisible && <Header isLoggedIn={!isLoggedIn} />}
-        <Routes>
-          <Route
-            path='/signup'
-            element={<Register />}
-          />
-          <Route
-            path='/signin'
-            element={<Login />}
-          />
-          <Route path='/' element={<Main />} />
-          <Route path='/movies' element={<Movies />} />
-          <Route path='/saved-movies' element={<SavedMovies />} />
-          <Route path='/profile' element={<Profile />} />
-          <Route path='*' element={<NotExists />} />
-        </Routes>
+        <main>
+          <Routes>
+            <Route
+              path='/signup'
+              element={<Register />}
+            />
+            <Route
+              path='/signin'
+              element={<Login />}
+            />
+            <Route path='/' element={<Main />} />
+            <Route path='/movies' element={<Movies />} />
+            <Route path='/saved-movies' element={<SavedMovies />} />
+            <Route path='/profile' element={<Profile />} />
+            <Route path='*' element={<NotExists />} />
+          </Routes>
+        </main>
         {isFooterVisible && <Footer />}
 
       </div>

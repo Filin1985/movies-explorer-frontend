@@ -32,13 +32,13 @@ const Main = () => {
     };
 
     return (
-        <main>
+        <section>
             <Promo />
             <NavTab scrollHandler={scrollHandler} />
             <AboutProject scroll={projectRef} />
             <Techs scroll={techsRef} />
             <AboutMe scroll={aboutRef} />
-        </main>
+        </section>
     )
 }
 
