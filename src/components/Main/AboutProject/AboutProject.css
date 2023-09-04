@@ -6,12 +6,16 @@
 }
 
 .about__list {
-  min-width: 550px;
+  width: 100%;
   list-style: none;
   display: flex;
   padding: 0;
   gap: 50px;
   margin: 70px 0 0 0;
+}
+
+.about__item {
+  max-width: 550px;
 }
 
 .about__subtitle {
@@ -65,12 +69,14 @@
 
 .about__weeks_type_backend {
   background-color: var(--green);
-  width: 228px;
+  width: 100%;
+  max-width: 228px;
 }
 
 .about__weeks_type_frontend {
   background-color: var(--light-gray);
-  width: 912px;
+  width: 100%;
+  max-width: 912px;
 }
 
 .about__tag {
@@ -80,4 +86,81 @@
   font-weight: 500;
   line-height: 17px;
   color: var(--gray);
+}
+
+@media screen and (max-width: 768px) {
+  .about {
+    height: 585px;
+  }
+
+  .about__list {
+    gap: 35px;
+  }
+
+  .about__subtitle {
+    margin-bottom: 22px;
+  }
+
+  .about__paragraph {
+    font-size: 12px;
+    margin-bottom: 93px;
+    line-height: 18px;
+  }
+
+  .about__weeks_type_backend {
+    width: 140px;
+  }
+}
+
+@media screen and (max-width: 555px) {
+  .about {
+    height: 650px;
+  }
+
+  .about__list {
+    flex-direction: column;
+    gap: 0;
+    margin: 60px 0 0 0;
+  }
+}
+
+@media screen and (max-width: 320px) {
+  .about {
+    height: 647px;
+  }
+
+  .about__subtitle {
+    margin-bottom: 16px;
+    font-size: 18px;
+    letter-spacing: -0.72px;
+  }
+
+  .about__paragraph {
+    font-size: 11px;
+    line-height: 16px;
+    margin: 0;
+  }
+
+  .about__list {
+    gap: 58px;
+    margin-bottom: 60px;
+  }
+
+  .about__weeks {
+    font-size: 11px;
+    padding: 11px 0;
+    margin-bottom: 10px;
+  }
+
+  .about__tag {
+    font-size: 11px;
+  }
+
+  .about__step {
+    min-height: 35px;
+  }
+
+  .about__weeks_type_backend {
+    max-width: 100px;
+  }
 }

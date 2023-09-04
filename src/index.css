@@ -3,7 +3,9 @@
 @import url(./vendor/fonts/fonts.css);
 @import url(./blocks/page/page.css);
 @import url(./blocks/section/section.css);
+@import url(./blocks/section/_type/section_type_landing.css);
 @import url(./blocks/section/_background/section_background_gray.css);
+@import url(./blocks/section/_height/section_height_less.css);
 @import url(./blocks/title/title.css);
 @import url(./ui/Button/Button.css);
 @import url(./ui/FilterCheckbox/FilterCheckbox.css);
@@ -14,6 +16,7 @@
 @import url(./components/Movies/Preloader/Preloader.css);
 @import url(./components/App/App.css);
 @import url(./components/Header/Header.css);
+@import url(./components/BurgerMenu/BurgerMenu.css);
 @import url(./components/Main/Main.css);
 @import url(./components/Main/Promo/Promo.css);
 @import url(./components/Main/NavTab/NavTab.css);

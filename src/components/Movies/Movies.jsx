@@ -6,7 +6,7 @@ import SectionDivider from '../../ui/SectionDivider/SectionDivider'
 import { useState } from 'react'
 
 const Movies = () => {
-    const [savedMovies, setSavedMovies] = useState([...Array(15)])
+    const [savedMovies, setSavedMovies] = useState([...Array(8)])
 
     return (
         <section className='movies section'>

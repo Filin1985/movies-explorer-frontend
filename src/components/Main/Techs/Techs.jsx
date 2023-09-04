@@ -1,6 +1,6 @@
-const Techs = () => {
+const Techs = ({ scroll }) => {
     return (
-        <section id='technologies' className='techs section section_background_gray'>
+        <section ref={scroll} id='technologies' className='techs section section_background_gray section_type_landing'>
             <h2 className='title'>Технологии</h2>
             <div className='techs__container'>
                 <h3 className='techs__title'>7 технологий</h3>

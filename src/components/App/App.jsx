@@ -31,7 +31,7 @@ function App() {
   return (
     <CurrentUserContext.Provider value={{ currentUser }}>
       <div className='page'>
-        {isHeaderVisible && <Header isLoggedIn={isLoggedIn} />}
+        {isHeaderVisible && <Header isLoggedIn={!isLoggedIn} />}
         <Routes>
           <Route
             path='/signup'

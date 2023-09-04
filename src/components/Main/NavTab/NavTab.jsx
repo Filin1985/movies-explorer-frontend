@@ -1,11 +1,11 @@
-import { Link } from 'react-router-dom'
+import Button from '../../../ui/Button/Button'
 
-const NavTab = () => {
+const NavTab = ({ scrollHandler }) => {
     return (
         <section className='navtab'>
-            <Link to='#about' className='navtab__link'>О проекте</Link>
-            <Link to='#technologies' className='navtab__link'>Технологии</Link>
-            <Link className='navtab__link'>Студент</Link>
+            <Button id='project' onClick={(evt) => scrollHandler(evt)} buttonText='О проекте' className='navtab__link' />
+            <Button id='techs' onClick={(evt) => scrollHandler(evt)} buttonText='Технологии' className='navtab__link' />
+            <Button id='about' onClick={(evt) => scrollHandler(evt)} buttonText='Студент' className='navtab__link' />
         </section>
     )
 }

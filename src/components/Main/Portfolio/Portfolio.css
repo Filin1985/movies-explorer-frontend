@@ -47,9 +47,75 @@
 
 .portfolio__svg {
   padding: 7px 7px 0 0;
-  background: url('../../../images/link.svg') no-repeat cover center;
 }
 
 .portfolio__svg:hover {
   opacity: 0.8;
+}
+
+@media screen and (max-width: 768px) {
+  .portfolio__title {
+    margin-top: 91px;
+  }
+
+  .portfolio__subtitle {
+    font-size: 28px;
+    line-height: 50px;
+    letter-spacing: -1.12px;
+  }
+
+  .portfolio__list {
+    margin-top: 30px;
+  }
+}
+
+@media screen and (max-width: 555px) {
+  .portfolio__title {
+    margin-top: 70px;
+  }
+
+  .portfolio__subtitle {
+    font-size: 28px;
+    line-height: 50px;
+    letter-spacing: -1.12px;
+  }
+
+  .portfolio__list {
+    margin-top: 21px;
+  }
+
+  .portfolio__subtitle {
+    padding: 19px 0;
+  }
+}
+
+@media screen and (max-width: 370px) {
+  .portfolio__title {
+    font-size: 14px;
+  }
+
+  .portfolio__subtitle {
+    font-size: 18px;
+    line-height: 28px;
+    letter-spacing: -0.72px;
+  }
+
+  .portfolio__svg {
+    width: 18px;
+    height: 18px;
+    transform: scale(0.8);
+  }
+}
+
+@media screen and (max-width: 320px) {
+  .portfolio__svg {
+    width: 19px;
+    height: 19px;
+    transform: scale(0.6);
+    padding: 0;
+  }
+
+  .portfolio__subtitle {
+    padding: 20px 0 19px 0;
+  }
 }

@@ -24,3 +24,43 @@
   max-width: 730px;
   margin: 184px 0 0 0;
 }
+
+@media screen and (max-width: 768px) {
+  .promo {
+    height: 784px;
+  }
+
+  .promo__logo {
+    top: 385px;
+  }
+
+  .promo__title {
+    margin-top: 326px;
+  }
+}
+
+@media screen and (max-width: 470px) {
+  .promo__title {
+    margin-top: 220px;
+    font-size: 45px;
+  }
+}
+
+@media screen and (max-width: 320px) {
+  .promo {
+    height: 570px;
+  }
+
+  .promo__title {
+    margin-top: 207px;
+    font-size: 31px;
+    line-height: 39px;
+    letter-spacing: -1.24px;
+  }
+
+  .promo__logo {
+    width: 248px;
+    height: 248px;
+    top: 270px;
+  }
+}

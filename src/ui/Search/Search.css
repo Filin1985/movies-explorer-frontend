@@ -29,7 +29,3 @@
 .search__text:focus {
   outline: none;
 }
-
-.movies__search {
-  margin-top: 60px;
-}

@@ -1,6 +1,8 @@
-const AboutProject = () => {
+import React from 'react'
+
+const AboutProject = ({ scroll }) => {
     return (
-        <section id='about' className='about section'>
+        <section ref={scroll} id='about' className='about section section_type_landing'>
             <h2 className='title title_margin_more'>О проекте</h2>
             <ul className='about__list'>
                 <li className='about__item'>

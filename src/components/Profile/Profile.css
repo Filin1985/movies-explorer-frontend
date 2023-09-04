@@ -76,3 +76,13 @@
   text-align: center;
   text-decoration: none;
 }
+
+@media screen and (max-width: 768px) {
+  .account {
+    height: 917px;
+  }
+
+  .account__set {
+    margin: 96px 0 210px 0;
+  }
+}

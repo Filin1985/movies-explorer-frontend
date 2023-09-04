@@ -1,4 +1,5 @@
 const Button = ({
+  id,
   onSubmit,
   onClick,
   name,
@@ -11,7 +12,7 @@ const Button = ({
   const extendedClassName = `button ${className}`
 
   return (
-    <button className={extendedClassName} onClick={onClick}>{buttonText}</button>
+    <button id={id} className={extendedClassName} onClick={onClick}>{buttonText}</button>
   )
 }
 

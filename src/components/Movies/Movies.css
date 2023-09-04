@@ -4,6 +4,20 @@
   align-items: center;
 }
 
+.movies__search {
+  margin-top: 60px;
+}
+
 .movies__divider {
   margin-top: 69px;
+}
+
+@media screen and (max-width: 768px) {
+  .movies__search {
+    margin-top: 80px;
+  }
+
+  .movies__divider {
+    margin-top: 49px;
+  }
 }
