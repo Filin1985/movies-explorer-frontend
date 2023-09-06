@@ -32,7 +32,7 @@ const Register = ({ error }) => {
         <section className='register'>
             <div className='register__header'>
                 <Link to='/'>
-                    <img src={logo} alt="Logo" />
+                    <img src={logo} alt="Логотип" />
                 </Link>
                 <h2 className="register__title">Добро пожаловать!</h2>
             </div>

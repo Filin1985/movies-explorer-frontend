@@ -50,7 +50,6 @@ function App() {
           </Routes>
         </main>
         {isFooterVisible && <Footer />}
-
       </div>
     </CurrentUserContext.Provider>
   );

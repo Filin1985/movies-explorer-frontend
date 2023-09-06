@@ -7,11 +7,10 @@
     display: none;
     background-color: var(--white);
     display: flex;
-    gap: 621px;
+    justify-content: space-between;
     position: absolute;
     width: 100%;
     max-width: 520px;
-    height: 1024px;
     top: 0;
     height: 100vh;
     right: 0;
@@ -56,15 +55,14 @@
     align-items: center;
     display: flex;
   }
+
+  .header__account_type_burger {
+    margin-bottom: 90px;
+  }
 }
 
 @media screen and (max-width: 320px) {
   .burger__list {
     margin-top: 144px;
-    gap: 24px;
-  }
-
-  .burger__content {
-    gap: 444px;
   }
 }

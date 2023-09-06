@@ -23,7 +23,7 @@ const Header = ({ isLoggedIn }) => {
   return (
     <header className={`header ${headerClassNameType}`}>
       <Link to='/'>
-        <img src={logo} alt="Logo" className='header__logo' />
+        <img src={logo} alt="Логотип" className='header__logo' />
       </Link>
       {isLoggedIn ?
         <>

@@ -31,7 +31,7 @@ const Login = ({ error }) => {
         <section className='login'>
             <div className='login__header'>
                 <Link to='/'>
-                    <img className='login__logo' src={logo} alt="Logo" />
+                    <img className='login__logo' src={logo} alt="Логотип" />
                 </Link>
                 <h2 className="login__title">Рады видеть!</h2>
             </div>

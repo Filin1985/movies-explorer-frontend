@@ -5,7 +5,7 @@ const BurgerMenu = ({ isBurgerMenu, setIsMenuOpen }) => {
     const [width, setWidth] = useState(window.innerWidth)
 
     useEffect(() => {
-        if (width >= 768) {
+        if (width >= 769) {
             setIsMenuOpen(false)
         }
         const handleClose = (event) => {
@@ -32,7 +32,7 @@ const BurgerMenu = ({ isBurgerMenu, setIsMenuOpen }) => {
                     <NavLink to='/movies' className={`burger__link`}>Фильмы</NavLink>
                     <NavLink to='/saved-movies' className={`burger__link`}> Сохранённые фильмы</NavLink>
                 </nav>
-                <Link to='/profile' className='header__link header__account'>
+                <Link to='/profile' className='header__link header__account header__account_type_burger'>
                     Аккаунт
                 </Link>
             </div>

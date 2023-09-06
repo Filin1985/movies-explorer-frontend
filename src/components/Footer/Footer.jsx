@@ -15,10 +15,10 @@ const Footer = () => {
                 </p>
                 <ul className='footer__list'>
                     <li className='footer__item'>
-                        <Link className='footer__link' to='https://practicum.yandex.ru/'>Яндекс.Практикум</Link>
+                        <Link className='footer__link' target='_blank' to='https://practicum.yandex.ru/'>Яндекс.Практикум</Link>
                     </li>
                     <li className='footer__item'>
-                        <Link className='footer__link' to='https://github.com/Filin1985'>Github</Link>
+                        <Link className='footer__link' target='_blank' to='https://github.com/Filin1985'>Github</Link>
                     </li>
                 </ul>
             </div>

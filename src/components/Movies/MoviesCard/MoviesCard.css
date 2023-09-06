@@ -22,6 +22,10 @@
   background: no-repeat url(../../../images/not_short.svg) center;
 }
 
+.card__favorites_active {
+  background: no-repeat url(../../../images/short.svg) center;
+}
+
 .card__remove {
   display: flex;
   justify-content: center;
