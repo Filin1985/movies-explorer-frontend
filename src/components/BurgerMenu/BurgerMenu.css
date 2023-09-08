@@ -8,7 +8,7 @@
     background-color: var(--white);
     display: flex;
     justify-content: space-between;
-    position: absolute;
+    position: fixed;
     width: 100%;
     max-width: 520px;
     top: 0;
@@ -47,7 +47,7 @@
 
   .burger__link.active {
     text-decoration: underline black 2px;
-    text-underline-offset: 8px;
+    text-underline-offset: 10px;
   }
 
   .burger__content_open {
@@ -64,5 +64,14 @@
 @media screen and (max-width: 320px) {
   .burger__list {
     margin-top: 144px;
+    gap: 25px;
+  }
+
+  .burger__link.active {
+    text-underline-offset: 11px;
+  }
+
+  .header__account_type_burger {
+    margin-bottom: 45px;
   }
 }

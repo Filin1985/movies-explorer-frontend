@@ -63,7 +63,9 @@
 
 .register__item:focus {
   outline: none;
+  border-bottom: 1px solid #3456f3;
 }
+
 .register__buttons {
   display: flex;
   flex-direction: column;
@@ -84,7 +86,7 @@
 }
 
 .register__register:hover {
-  opacity: 0.6;
+  opacity: 0.8;
 }
 
 .register__redirect {
@@ -111,7 +113,7 @@
   line-height: normal;
 }
 
-.register__account:hover {
+.login__account:hover {
   opacity: 0.8;
 }
 

@@ -5,7 +5,7 @@ import { CurrentUserContext } from '../../contexts/CurrentUserContext';
 import Form from '../../ui/Form/Form';
 import Preloader from '../Movies/Preloader/Preloader';
 import { Link } from 'react-router-dom';
-import logo from '../../images/logo.svg'
+import Logo from '../../ui/Logo/Logo';
 
 const Login = ({ error }) => {
     const { values, isValid, errors, setValues, setIsValid, handleChange } =
@@ -30,9 +30,7 @@ const Login = ({ error }) => {
     return (
         <section className='login'>
             <div className='login__header'>
-                <Link to='/'>
-                    <img className='login__logo' src={logo} alt="Логотип" />
-                </Link>
+                <Logo />
                 <h2 className="login__title">Рады видеть!</h2>
             </div>
             <Form type='login' onSubmit={handleSubmit} onChange={handleChange} values={values} errors={errors}>

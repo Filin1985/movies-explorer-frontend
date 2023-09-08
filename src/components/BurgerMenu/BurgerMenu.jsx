@@ -19,20 +19,22 @@ const BurgerMenu = ({ isBurgerMenu, setIsMenuOpen }) => {
         }
     }, [width, setIsMenuOpen])
 
-    const burgerClassName = isBurgerMenu ? 'burger__content burger__content_open' : 'burger__content'
+    const handleCLoseByLink = () => {
+        setIsMenuOpen(false)
+    }
 
     return (
         <>
             <div className='burger__overlay'></div>
             <div
-                className={burgerClassName}
+                className={isBurgerMenu ? 'burger__content burger__content_open' : 'burger__content'}
             >
                 <nav className='burger__list'>
-                    <NavLink to='/' className={`burger__link`}>Главная</NavLink>
-                    <NavLink to='/movies' className={`burger__link`}>Фильмы</NavLink>
-                    <NavLink to='/saved-movies' className={`burger__link`}> Сохранённые фильмы</NavLink>
+                    <NavLink onClick={handleCLoseByLink} to='/' className={`burger__link`}>Главная</NavLink>
+                    <NavLink onClick={handleCLoseByLink} to='/movies' className={`burger__link`}>Фильмы</NavLink>
+                    <NavLink onClick={handleCLoseByLink} to='/saved-movies' className={`burger__link`}> Сохранённые фильмы</NavLink>
                 </nav>
-                <Link to='/profile' className='header__link header__account header__account_type_burger'>
+                <Link onClick={handleCLoseByLink} to='/profile' className='header__link header__account header__account_type_burger'>
                     Аккаунт
                 </Link>
             </div>

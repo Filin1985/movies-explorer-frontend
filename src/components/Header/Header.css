@@ -117,6 +117,9 @@
     width: 17px;
     height: 22px;
     background: url('../../images/close_black.svg') no-repeat center;
+    position: fixed;
+    top: 27px;
+    right: 29px;
   }
 
   .header_display_none {
@@ -154,6 +157,8 @@
     width: 28px;
     height: 22px;
     background: url('../../images/close_320.svg') no-repeat center;
+    top: 21px;
+    right: 15px;
   }
 
   .header__account {

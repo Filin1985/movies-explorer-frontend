@@ -6,7 +6,8 @@ import Form from '../../ui/Form/Form';
 import Preloader from '../Movies/Preloader/Preloader';
 import { EMAIL_REGEXP, USERNAME_REGEXP } from '../../utils/constants';
 import { Link } from 'react-router-dom';
-import logo from '../../images/logo.svg'
+import Logo from '../../ui/Logo/Logo';
+
 
 const Register = ({ error }) => {
     const { values, isValid, errors, setValues, setIsValid, handleChange } =
@@ -31,9 +32,7 @@ const Register = ({ error }) => {
     return (
         <section className='register'>
             <div className='register__header'>
-                <Link to='/'>
-                    <img src={logo} alt="Логотип" />
-                </Link>
+                <Logo />
                 <h2 className="register__title">Добро пожаловать!</h2>
             </div>
             <Form type='register' onSubmit={handleSubmit} onChange={handleChange} values={values} errors={errors}>
