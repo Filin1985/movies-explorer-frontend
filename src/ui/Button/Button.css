@@ -1,0 +1,23 @@
+.button {
+  cursor: pointer;
+  border: none;
+  background-color: transparent;
+  font-size: 13px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: normal;
+  padding: 0;
+}
+
+.button:hover {
+  opacity: 0.8;
+}
+
+.search__button {
+  width: 80px;
+  height: 34px;
+  background: no-repeat url('../../images/search.svg') center;
+  background-color: var(--orange);
+  border-radius: 48px;
+  margin-right: 6px;
+}
