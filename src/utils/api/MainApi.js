@@ -77,7 +77,8 @@ class MainApi {
 }
 
 export const mainApi = new MainApi({
-  url: 'https://api.my.places.nomoredomains.sbs',
+  url: 'http://localhost:3001',
+  // url: 'https://api.my.places.nomoredomains.sbs',
   headers: {
     'Content-Type': 'application/json',
   },
