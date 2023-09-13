@@ -2,6 +2,7 @@ import React, { useState } from 'react'
 import logo from '../../images/logo.svg'
 import { Link, useLocation } from 'react-router-dom'
 import BurgerMenu from '../BurgerMenu/BurgerMenu'
+import Logo from '../../ui/Logo/Logo'
 
 const PATH_FOR_LIGHT_HEADERS = ['/movies', '/saved-movies', '/profile']
 
@@ -22,9 +23,7 @@ const Header = ({ isLoggedIn }) => {
 
   return (
     <header className={`header ${headerClassNameType}`}>
-      <Link to='/'>
-        <img src={logo} alt="Логотип" className='header__logo' />
-      </Link>
+      <Logo />
       {isLoggedIn ?
         <>
           <div className='header__list header_display_none'>

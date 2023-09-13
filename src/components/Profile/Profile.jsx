@@ -1,14 +1,12 @@
 import { useContext, useEffect, useState } from 'react';
-import { Link } from 'react-router-dom'
 import useForm from '../../hooks/useForm';
 import Button from '../../ui/Button/Button';
 import { CurrentUserContext } from '../../contexts/CurrentUserContext';
 import Form from '../../ui/Form/Form';
-import Preloader from '../Movies/Preloader/Preloader';
 
-const Profile = ({ error }) => {
+const Profile = ({ isFetching, handleEditProfile, handleLogout }) => {
     const [isEditing, setIsEditing] = useState(false)
-    const { values, isValid, errors, setValues, setIsValid, handleChange } =
+    const { values, isValid, errors, setValues, handleChange } =
         useForm();
     const { currentUser } = useContext(CurrentUserContext);
 
@@ -21,23 +19,17 @@ const Profile = ({ error }) => {
 
     const handleSubmit = (evt) => {
         evt.preventDefault()
-    }
-
-    const handleEditProfile = () => {
-        setIsEditing(true)
-    }
-
-    if (!values.name) {
-        return <Preloader />
+        handleEditProfile(values.name, values.email)
+        setIsEditing(false)
     }
 
     return (
         <section className='account'>
             <h2 className="account__title">Привет, Марат!</h2>
             <Form type='account' onSubmit={handleSubmit} onChange={handleChange} values={values} errors={errors}>
-                {isEditing ? (<Button buttonText='Сохранить' className='account__save' onClick={handleEditProfile} />) : (<div className='account__buttons'>
-                    <Button buttonText='Редактировать' className='account__register' onClick={handleEditProfile} />
-                    <Link to='/signin' className='account__account'>Выйти из аккаунта</Link>
+                {isEditing ? (<Button isButtonDisable={!isValid} buttonText={isFetching ? 'Сохранение...' : 'Сохранить'} className='account__save' onSubmit={handleSubmit} />) : (<div className='account__buttons'>
+                    <Button buttonText='Редактировать' className='account__register' onClick={() => setIsEditing(true)} />
+                    <Button buttonText='Выйти из аккаунта' className='account__account' onClick={handleLogout} />
                 </div>)}
             </Form>
         </section>

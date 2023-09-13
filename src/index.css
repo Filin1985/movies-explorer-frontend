@@ -1,6 +1,7 @@
 @import url(./vendor/normalize.css);
 @import url(./vendor/variable.css);
 @import url(./vendor/fonts/fonts.css);
+@import url(./blocks/global/global.css);
 @import url(./blocks/page/page.css);
 @import url(./blocks/section/section.css);
 @import url(./blocks/section/_type/section_type_landing.css);
@@ -13,6 +14,7 @@
 @import url(./ui/SectionDivider/SectionDivider.css);
 @import url(./ui/Form/Form.css);
 @import url(./ui/Logo/Logo.css);
+@import url(./ui/Tooltip/Tooltip.css);
 @import url(./components/NotExists/NotExists.css);
 @import url(./components/Movies/Preloader/Preloader.css);
 @import url(./components/App/App.css);

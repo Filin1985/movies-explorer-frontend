@@ -2,6 +2,7 @@
   display: flex;
   flex-direction: column;
   align-items: center;
+  min-height: 60vh;
 }
 
 .movies__search {
@@ -22,6 +23,15 @@
   font-style: normal;
   font-weight: 500;
   line-height: normal;
+}
+
+.movies__message {
+  font-size: 20px;
+  font-style: normal;
+  font-weight: 500;
+  height: 40vh;
+  display: flex;
+  align-items: center;
 }
 
 @media screen and (max-width: 768px) {

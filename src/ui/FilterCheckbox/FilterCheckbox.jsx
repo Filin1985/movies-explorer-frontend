@@ -1,18 +1,30 @@
-import React from "react";
+import { useEffect } from 'react'
+import { useLocation } from 'react-router-dom'
+import { MOVIES_PATH } from '../../utils/constants'
 
-import { useState } from 'react'
+const FilterCheckbox = ({ label, isShortFilterActive, setIsShortFilterActive, className }) => {
+    const location = useLocation()
 
-const FilterCheckbox = ({ label, toggled, className }) => {
-    const [isToggled, toggle] = useState(toggled)
+    useEffect(() => {
+        if (location.pathname === MOVIES_PATH) {
+            console.log('object');
+            setIsShortFilterActive(JSON.parse(localStorage.getItem('isShort')))
+        } else {
+            setIsShortFilterActive(false)
+        }
+    }, [])
 
-    const callback = () => {
-        toggle(!isToggled)
+    const handleToggle = () => {
+        if (location.pathname === MOVIES_PATH) {
+            localStorage.setItem('isShort', JSON.stringify(!isShortFilterActive))
+        }
+        setIsShortFilterActive(prevState => !prevState)
     }
 
     return (
         <div className={`toggle ${className}`}>
             <label className='toggle__button'>
-                <input className='toggle__input' type="checkbox" defaultChecked={isToggled} onClick={callback} />
+                <input className='toggle__input' type="checkbox" onChange={handleToggle} checked={isShortFilterActive} />
                 <span className='toggle__span' />
             </label>
             <p className='toggle__label'>{label}</p>

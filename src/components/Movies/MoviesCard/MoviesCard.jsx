@@ -1,28 +1,30 @@
-import { useLocation } from 'react-router-dom'
-import image1 from '../../../images/image_1.png'
+import { Link, useLocation } from 'react-router-dom'
 import Button from '../../../ui/Button/Button'
-import { cardRoutes } from '../../../utils/constants'
-import { useState } from 'react'
+import { CARD_ROUTES } from '../../../utils/constants'
+import { convertTimeFromMinutes } from '../../../utils/utils'
 
-const MoviesCard = () => {
-    const [saved, setSaved] = useState(false)
+const MoviesCard = ({ movie, handleSaveMovie, deleteSavedMovie, savedMovies }) => {
     const location = useLocation()
 
-    const toggleAddToFavorites = () => {
-        console.log(saved);
-        setSaved(prevState => !prevState)
-    }
+
+    const isLiked = savedMovies?.some(item => item.movieId === movie.id)
+
+    const thumbnail = movie.image?.url ? `https://api.nomoreparties.co${movie.image?.url}` : movie.image
+
+    if (!movie) return null
 
     return (
         <li className='card'>
             <article className='card__container'>
-                <img className='card__image' src={image1} alt="Добавить в избранное" />
+                <Link to={movie.trailerLink} target='_blank'>
+                    <img className='card__image' src={thumbnail} alt="Изображение фильма" />
+                </Link>
                 <div className='card__box'>
-                    <h2 className='card__title'>33 слова о дизайне</h2>
-                    {cardRoutes.includes(location.pathname) ? <Button type='button' className='card__remove' /> : <Button type='button' className={`card__favorites ${saved && 'card__favorites_active'}`} onClick={toggleAddToFavorites} />}
+                    <h2 className='card__title'>{movie.nameRU}</h2>
+                    {CARD_ROUTES.includes(location.pathname) ? <Button type='button' className='card__remove' onClick={() => deleteSavedMovie(movie._id)} /> : <Button type='button' className={`card__favorites ${isLiked && 'card__favorites_active'}`} onClick={() => handleSaveMovie(movie)} />}
 
                 </div>
-                <p className='card__duration'>1ч42м</p>
+                <p className='card__duration'>{convertTimeFromMinutes(movie.duration)}</p>
             </article>
         </li>
     )

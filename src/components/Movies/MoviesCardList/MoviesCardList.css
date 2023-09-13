@@ -6,25 +6,25 @@
   padding: 0;
   margin: 80px 0 0 0;
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(270px, auto));
+  grid-template-columns: repeat(auto-fit, minmax(auto, 270px));
   row-gap: 30px;
   column-gap: 20px;
   width: 100%;
+  justify-content: center;
 }
 
 @media screen and (max-width: 768px) {
   .cards__elements {
-    grid-template-columns: repeat(auto-fit, minmax(339px, auto));
+    grid-template-columns: repeat(auto-fill, minmax(auto, 330px));
     column-gap: 30px;
     row-gap: 34px;
-    justify-items: center;
+    justify-content: center;
   }
 }
 
 @media screen and (max-width: 430px) {
   .cards__elements {
-    grid-template-columns: repeat(auto-fit, minmax(300px, auto));
-    justify-items: normal;
+    grid-template-columns: repeat(auto-fit, minmax(auto, 300px));
     margin-top: 50px;
     row-gap: 19px;
   }

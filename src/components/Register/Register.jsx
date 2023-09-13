@@ -1,32 +1,16 @@
-import { useContext, useEffect } from 'react';
 import useForm from '../../hooks/useForm';
 import Button from '../../ui/Button/Button';
-import { CurrentUserContext } from '../../contexts/CurrentUserContext';
 import Form from '../../ui/Form/Form';
-import Preloader from '../Movies/Preloader/Preloader';
-import { EMAIL_REGEXP, USERNAME_REGEXP } from '../../utils/constants';
 import { Link } from 'react-router-dom';
 import Logo from '../../ui/Logo/Logo';
 
-
-const Register = ({ error }) => {
-    const { values, isValid, errors, setValues, setIsValid, handleChange } =
+const Register = ({ handleRegister, isFetching }) => {
+    const { values, isValid, errors, handleChange } =
         useForm();
-    const { currentUser } = useContext(CurrentUserContext);
-
-    useEffect(() => {
-        setValues({
-            name: currentUser.name,
-            email: currentUser.email,
-        });
-    }, [setValues, currentUser.name, currentUser.email]);
 
     const handleSubmit = (evt) => {
         evt.preventDefault()
-    }
-
-    if (!values.name) {
-        return <Preloader />
+        handleRegister(values.name, values.email, values.password)
     }
 
     return (
@@ -37,7 +21,7 @@ const Register = ({ error }) => {
             </div>
             <Form type='register' onSubmit={handleSubmit} onChange={handleChange} values={values} errors={errors}>
                 <div className='register__buttons'>
-                    <Button buttonText='Зарегистрироваться' className='register__register' />
+                    <Button buttonText={isFetching ? 'Регистрация...' : 'Зарегистрироваться'} isButtonDisable={!isValid} className='register__register' />
                     <div className='register__redirect'>
                         <p className='register__text'>Уже зарегистрированы?</p>
                         <Link to='/signin' className='login__account'>Войти</Link>

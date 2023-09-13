@@ -34,6 +34,7 @@
   padding: 0;
   text-align: right;
   width: 100%;
+  border-bottom: 1px solid transparent;
 }
 
 .account__item:focus {

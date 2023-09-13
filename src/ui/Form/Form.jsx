@@ -60,7 +60,6 @@ const Form = ({
               name="password"
               type="password"
               value={values?.password || ""}
-              pattern={USERNAME_REGEXP}
               onChange={onChange}
               placeholder='Введите пароль'
               minLength='8'

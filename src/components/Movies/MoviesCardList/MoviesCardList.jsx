@@ -1,13 +1,16 @@
 import MoviesCard from '../MoviesCard/MoviesCard'
 
-const MoviesCardList = ({ movies, className, type }) => {
+const MoviesCardList = ({ movies, handleSaveMovie, deleteSavedMovie, savedMovies, className }) => {
 
+    if (!movies) {
+        return null
+    }
 
     return (
         <div className='cards'>
             <ul className={`cards__elements ${className}`}>
-                {movies.map((item, index) => (
-                    <MoviesCard key={index} />
+                {movies.map((movie) => (
+                    <MoviesCard key={movie.movieId || movie.id} movie={movie} handleSaveMovie={handleSaveMovie} deleteSavedMovie={deleteSavedMovie} savedMovies={savedMovies} />
                 ))}
             </ul>
         </div>

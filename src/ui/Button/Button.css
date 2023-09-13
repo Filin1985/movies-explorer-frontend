@@ -9,6 +9,15 @@
   padding: 0;
 }
 
+.button:disabled {
+  cursor: default;
+  background-color: var(--middle-gray);
+}
+
+.button:disabled:hover {
+  opacity: 1;
+}
+
 .button:hover {
   opacity: 0.8;
 }
@@ -20,4 +29,20 @@
   background-color: var(--orange);
   border-radius: 48px;
   margin-right: 6px;
+}
+
+.button_type_close {
+  position: absolute;
+  width: 10px;
+  height: 10px;
+  background: url('../../images/close_black.svg') no-repeat center;
+  top: -20px;
+  right: -225px;
+  opacity: 0.5;
+}
+
+.button_tooltip_close {
+  width: 16px;
+  height: 16px;
+  background: url('../../images/remove_white.svg') no-repeat center;
 }

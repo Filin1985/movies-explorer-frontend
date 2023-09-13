@@ -17,6 +17,8 @@
   line-height: 17px;
   border: none;
   padding-left: 22px;
+  max-width: 1000px;
+  width: 100%;
 }
 
 .search__text::placeholder {
