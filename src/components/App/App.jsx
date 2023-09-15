@@ -113,6 +113,7 @@ function App() {
     setIsFetching(true)
     try {
       const response = await auth.loginUser(email, password)
+      console.log(response);
       if (response.ok) {
         setTooltip({
           text: VALIDATION_MESSAGES_BACKEND[response.status],
