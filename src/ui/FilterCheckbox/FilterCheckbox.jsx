@@ -7,7 +7,6 @@ const FilterCheckbox = ({ label, isShortFilterActive, setIsShortFilterActive, cl
 
     useEffect(() => {
         if (location.pathname === MOVIES_PATH) {
-            console.log('object');
             setIsShortFilterActive(JSON.parse(localStorage.getItem('isShort')))
         } else {
             setIsShortFilterActive(false)

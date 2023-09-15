@@ -12,7 +12,6 @@ const Movies = ({ movies, isLoading, moviesSearchQuery, handleSearchFilms, isSho
     const [slicedMovies, setSlicedMovies] = useState([])
     const isMoviesSectionShow = moviesSearchQuery && movies?.length
     const isMoreMoviesButtonVisible = movies?.length > slicedMovies?.length
-    console.log(movies);
     const handleResize = useCallback(() => {
         setTimeout(() => {
             setWindowSize(window.innerWidth);
@@ -29,6 +28,8 @@ const Movies = ({ movies, isLoading, moviesSearchQuery, handleSearchFilms, isSho
     useEffect(() => {
         if (windowSize >= 1280) {
             setSlicedMovies(movies.slice(0, MOVIES_PER_PAGE_SIZE[1280]))
+        } else if (windowSize >= 990) {
+            setSlicedMovies(movies.slice(0, MOVIES_PER_PAGE_SIZE[990]))
         } else if (windowSize >= 480) {
             setSlicedMovies(movies.slice(0, MOVIES_PER_PAGE_SIZE[480]))
         } else {
@@ -40,6 +41,8 @@ const Movies = ({ movies, isLoading, moviesSearchQuery, handleSearchFilms, isSho
         const currentSlicedMoviesLength = slicedMovies.length
         if (windowSize >= 1280) {
             setSlicedMovies(movies.slice(0, currentSlicedMoviesLength + MOVIES_TO_ADD[1280]))
+        } else if (windowSize >= 990) {
+            setSlicedMovies(movies.slice(0, currentSlicedMoviesLength + MOVIES_TO_ADD[990]))
         } else {
             setSlicedMovies(movies.slice(0, currentSlicedMoviesLength + MOVIES_TO_ADD[320]))
         }

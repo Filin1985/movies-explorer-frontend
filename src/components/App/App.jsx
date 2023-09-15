@@ -213,7 +213,6 @@ function App() {
     if (!movies) {
       return null;
     }
-    console.log(movies);
     return movies.filter(
       (movie) =>
         (isShort ? movie.duration <= 40 : movie) &&

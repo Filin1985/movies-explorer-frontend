@@ -8,12 +8,14 @@ export const SAVED_MOVIES_PATH = '/saved-movies'
 export const MOVIES_API_BASE_URL = 'https://api.nomoreparties.co/'
 export const MOVIES_PER_PAGE_SIZE = {
   1280: 16,
+  990: 12,
   480: 8,
   320: 5
 }
 
 export const MOVIES_TO_ADD = {
   1280: 4,
+  990: 3,
   320: 2
 }
 
