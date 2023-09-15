@@ -6,6 +6,7 @@ const Form = ({
   errors,
   onChange,
   type,
+  isDisabled,
   children,
 }) => {
 
@@ -29,6 +30,7 @@ const Form = ({
             minLength='2'
             maxLength='30'
             required
+            disabled={type === 'account' ? isDisabled : false}
           />
           <span className={`item-error ${errors?.name && "error_visible"}`}>
             {errors.name}
@@ -46,6 +48,7 @@ const Form = ({
             onChange={onChange}
             placeholder='Введите email'
             required
+            disabled={type === 'account' ? isDisabled : false}
           />
           <span className={`item-error ${errors?.email && "error_visible"}`}>
             {errors.email}

@@ -1,4 +1,4 @@
-export const EMAIL_REGEXP = '^.+@.+\..+$'
+export const EMAIL_REGEXP = '.+@.+\\..+'
 export const USERNAME_REGEXP = '^(?!\s)[A-Za-zА-Яа-я\-\s]+$';
 export const FOOTER_ROUTES = ['/', '/movies', '/saved-movies']
 export const HEADER_ROUTES = ['/', '/movies', '/saved-movies', '/profile']

@@ -15,6 +15,7 @@ const Profile = ({ isFetching, handleEditProfile, handleLogout }) => {
             name: currentUser.name,
             email: currentUser.email,
         });
+        setIsEditing(false)
     }, [setValues, currentUser.name, currentUser.email]);
 
     const handleSubmit = (evt) => {
@@ -26,7 +27,7 @@ const Profile = ({ isFetching, handleEditProfile, handleLogout }) => {
     return (
         <section className='account'>
             <h2 className="account__title">Привет, {currentUser.name}!</h2>
-            <Form type='account' onSubmit={handleSubmit} onChange={handleChange} values={values} errors={errors}>
+            <Form isDisabled={!isEditing} type='account' onSubmit={handleSubmit} onChange={handleChange} values={values} errors={errors}>
                 {isEditing ? (<Button isButtonDisable={!isValid} buttonText={isFetching ? 'Сохранение...' : 'Сохранить'} className='account__save' onSubmit={handleSubmit} />) : (<div className='account__buttons'>
                     <Button buttonText='Редактировать' className='account__register' onClick={() => setIsEditing(true)} />
                     <Button buttonText='Выйти из аккаунта' className='account__account' onClick={handleLogout} />

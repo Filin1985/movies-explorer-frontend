@@ -16,3 +16,8 @@
   font-weight: 400;
   line-height: normal;
 }
+
+.account__item:disabled {
+  background-color: transparent;
+  color: inherit;
+}
