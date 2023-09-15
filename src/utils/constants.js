@@ -6,6 +6,8 @@ export const CARD_ROUTES = ['/saved-movies']
 export const MOVIES_PATH = '/movies'
 export const SAVED_MOVIES_PATH = '/saved-movies'
 export const MOVIES_API_BASE_URL = 'https://api.nomoreparties.co/'
+export const SHORT_MOVIES_TIME = 40
+export const CONVERT_TO_MINUTES = 60
 export const MOVIES_PER_PAGE_SIZE = {
   1280: 16,
   990: 12,

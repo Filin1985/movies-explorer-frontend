@@ -50,5 +50,6 @@ class Auth {
 }
 
 export const auth = new Auth({
-  url: 'https://api.my.places.nomoredomains.sbs',
+  // url: 'https://api.my.places.nomoredomains.sbs',
+  url: 'http://localhost:3001',
 })

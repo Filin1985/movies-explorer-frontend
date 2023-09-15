@@ -13,7 +13,7 @@ import SavedMovies from '../SavedMovies/SavedMovies';
 import Register from '../Register/Register';
 import Login from '../Login/Login';
 import Profile from '../Profile/Profile';
-import { VALIDATION_MESSAGES_BACKEND, CUSTOM_ERROR_MESSAGE, FOOTER_ROUTES, HEADER_ROUTES, MOVIES_API_BASE_URL, MOVIE_NOT_FOUND_MESSAGE } from '../../utils/constants';
+import { VALIDATION_MESSAGES_BACKEND, CUSTOM_ERROR_MESSAGE, FOOTER_ROUTES, HEADER_ROUTES, MOVIES_API_BASE_URL, MOVIE_NOT_FOUND_MESSAGE, SHORT_MOVIES_TIME } from '../../utils/constants';
 import { CurrentUserContext } from '../../contexts/CurrentUserContext';
 import { mainApi } from '../../utils/api/MainApi';
 import { moviesApi } from '../../utils/api/MoviesApi';
@@ -213,12 +213,13 @@ function App() {
   }
 
   const handleFilterMovies = useCallback((movies, searchQuery, isShort) => {
+    console.log(searchQuery, isShort);
     if (!movies) {
       return null;
     }
     return movies.filter(
       (movie) =>
-        (isShort ? movie.duration <= 40 : movie) &&
+        (isShort ? movie.duration <= SHORT_MOVIES_TIME : movie) &&
         (movie.nameRU.toLowerCase().includes(searchQuery.toLowerCase()) || movie.nameEN.toLowerCase().includes(searchQuery.toLowerCase()))
     );
   }, []);
@@ -363,19 +364,6 @@ function App() {
     }
   }
 
-  const filterSavedMovies = () => {
-    if (querySavedFilms && isShortFilterActive) {
-      handleFilterMovies(savedMovies, querySavedFilms, isShortFilterActive)
-    } else if (querySavedFilms) {
-      return searchedSavedMovies
-    } else if (isShortFilterActive) {
-      console.log(isShortFilterActive);
-      return filterShortMovies(savedMovies)
-    } else {
-      return savedMovies
-    }
-  }
-
   useEffect(() => {
     if (!isLoggedIn) return
     getMoviesFromBeatFilm()
@@ -412,7 +400,7 @@ function App() {
                   isLoggedIn={isLoggedIn}
                   setQuerySavedFilms={setQuerySavedFilms}
                   handleSearchFilms={handleSearchSavedFilms}
-                  movies={filterSavedMovies()}
+                  movies={handleFilterMovies(savedMovies, querySavedFilms, isShortFilterActive)}
                   isShortFilterActive={isShortFilterActive}
                   setIsShortFilterActive={setIsShortFilterActive}
                   getSavedMovies={getSavedMovies}
