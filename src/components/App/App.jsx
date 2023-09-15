@@ -346,6 +346,7 @@ function App() {
       const response = await mainApi.deleteMovie(movieId)
       if (response.ok) {
         setSavedMovies(prevMovies => prevMovies.filter(movie => movie._id !== movieId))
+        setSearchedSavedMovies(prevMovies => prevMovies.filter(movie => movie._id !== movieId))
         setTooltip({
           text: VALIDATION_MESSAGES_BACKEND[response.status],
           type: 'valid',
@@ -367,7 +368,8 @@ function App() {
     } else if (querySavedFilms) {
       return searchedSavedMovies
     } else if (isShortFilterActive) {
-      filterShortMovies(savedMovies)
+      console.log(isShortFilterActive);
+      return filterShortMovies(savedMovies)
     } else {
       return savedMovies
     }

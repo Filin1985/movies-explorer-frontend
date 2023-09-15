@@ -18,9 +18,14 @@ function Search({ className, handleSearchFilms, setQuerySavedFilms }) {
                     query: prevQuery
                 })
             }
+        } else {
+            setQuerySavedFilms('')
         }
-
     }, [])
+
+    if (!values?.query && location.pathname === SAVED_MOVIES_PATH) {
+        setQuerySavedFilms('')
+    }
 
     const handleSearchSubmit = (evt) => {
         evt.preventDefault()
