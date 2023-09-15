@@ -2,9 +2,9 @@ import { useEffect } from 'react';
 import { useLocation } from 'react-router-dom';
 import useForm from '../../hooks/useForm';
 import Button from '../Button/Button'
-import { MOVIES_PATH } from '../../utils/constants';
+import { MOVIES_PATH, SAVED_MOVIES_PATH } from '../../utils/constants';
 
-function Search({ className, handleSearchFilms }) {
+function Search({ className, handleSearchFilms, setQuerySavedFilms }) {
     const { values, setValues, handleChange } =
         useForm();
     const location = useLocation()
@@ -19,11 +19,15 @@ function Search({ className, handleSearchFilms }) {
                 })
             }
         }
+
     }, [])
 
     const handleSearchSubmit = (evt) => {
         evt.preventDefault()
         handleSearchFilms(values.query.toLowerCase())
+        if (location.pathname === SAVED_MOVIES_PATH) {
+            setQuerySavedFilms(values.query.toLowerCase())
+        }
     }
 
     return (

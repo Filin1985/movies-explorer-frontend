@@ -5,7 +5,7 @@ import MoviesCardList from '../Movies/MoviesCardList/MoviesCardList'
 import Preloader from '../Movies/Preloader/Preloader'
 import { useEffect } from 'react'
 
-const SavedMovies = ({ movies, isLoading, isShortFilterActive, setIsShortFilterActive, handleSearchFilms, deleteSavedMovie, getSavedMovies }) => {
+const SavedMovies = ({ movies, isLoading, isShortFilterActive, setIsShortFilterActive, handleSearchFilms, setQuerySavedFilms, deleteSavedMovie, getSavedMovies }) => {
 
     useEffect(() => {
         getSavedMovies()
@@ -17,7 +17,7 @@ const SavedMovies = ({ movies, isLoading, isShortFilterActive, setIsShortFilterA
 
     return (
         <section className='movies section'>
-            <Search className='movies__search' handleSearchFilms={handleSearchFilms} />
+            <Search className='movies__search' setQuerySavedFilms={setQuerySavedFilms} handleSearchFilms={handleSearchFilms} />
             <FilterCheckbox className='movies__toggle'
                 isShortFilterActive={isShortFilterActive} setIsShortFilterActive={setIsShortFilterActive} label='Короткометражки' />
             <SectionDivider className='movies__divider' />

@@ -34,6 +34,8 @@ function App() {
   })
   const [movies, setMovies] = useState([])
   const [savedMovies, setSavedMovies] = useState([])
+  const [searchedSavedMovies, setSearchedSavedMovies] = useState([])
+  const [querySavedFilms, setQuerySavedFilms] = useState('')
   const [searchedMovies, setSearchedMovies] = useState(JSON.parse(localStorage.getItem('searchedMovies')) || [])
   const [moviesSearchQuery, setMoviesSearchQuery] = useState(JSON.parse(localStorage.getItem('query')) || '')
   const [isShortFilterActive, setIsShortFilterActive] = useState(false)
@@ -248,7 +250,7 @@ function App() {
   }
 
   const handleSearchSavedFilms = (query, isShort) => {
-    setSavedMovies(handleFilterMovies(savedMovies, query, isShort))
+    setSearchedSavedMovies(handleFilterMovies(savedMovies, query, isShort))
   }
 
   const getMoviesFromBeatFilm = async () => {
@@ -359,6 +361,18 @@ function App() {
     }
   }
 
+  const filterSavedMovies = () => {
+    if (querySavedFilms && isShortFilterActive) {
+      handleFilterMovies(savedMovies, querySavedFilms, isShortFilterActive)
+    } else if (querySavedFilms) {
+      return searchedSavedMovies
+    } else if (isShortFilterActive) {
+      filterShortMovies(savedMovies)
+    } else {
+      return savedMovies
+    }
+  }
+
   useEffect(() => {
     if (!isLoggedIn) return
     getMoviesFromBeatFilm()
@@ -393,8 +407,9 @@ function App() {
                 <ProtectedRoute
                   isLoading={isLoading}
                   isLoggedIn={isLoggedIn}
+                  setQuerySavedFilms={setQuerySavedFilms}
                   handleSearchFilms={handleSearchSavedFilms}
-                  movies={isShortFilterActive ? filterShortMovies(savedMovies) : savedMovies}
+                  movies={filterSavedMovies()}
                   isShortFilterActive={isShortFilterActive}
                   setIsShortFilterActive={setIsShortFilterActive}
                   getSavedMovies={getSavedMovies}

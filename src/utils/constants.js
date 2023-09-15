@@ -29,4 +29,4 @@ export const VALIDATION_MESSAGES_BACKEND = {
 
 export const CUSTOM_ERROR_MESSAGE = 'Во время запроса произошла ошибка. Возможно, проблема с соединением или сервер недоступен. Подождите немного и попробуйте ещё раз'
 
-export const MOVIE_NOT_FOUND_MESSAGE = 'По вашему запросу фильмов не найдено! Попробуйте другой вариант'
+export const MOVIE_NOT_FOUND_MESSAGE = 'Ничего не найдено'
