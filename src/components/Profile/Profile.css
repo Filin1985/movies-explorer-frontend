@@ -1,0 +1,140 @@
+.account {
+  display: flex;
+  height: 635px;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.account__title {
+  font-size: 24px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: normal;
+  margin: 0;
+  text-align: center;
+}
+
+.account__set {
+  display: flex;
+  flex-direction: column;
+  gap: 17px;
+  padding: 0;
+  border: none;
+  margin: 120px 0 220px 0;
+}
+
+.account__item {
+  font-size: 11px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+  text-rendering: optimizeLegibility;
+  border: none;
+  padding: 0;
+  text-align: right;
+  width: 100%;
+  border-bottom: 1px solid transparent;
+}
+
+.account__item:focus {
+  outline: none;
+  border-bottom: 1px solid #3456f3;
+}
+
+.account__item_el_name {
+  padding-bottom: 16px;
+}
+
+.account__field {
+  font-size: 11px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: normal;
+  width: 50px;
+  text-rendering: optimizeLegibility;
+}
+
+.account__box {
+  display: flex;
+  width: 410px;
+  position: relative;
+}
+
+.account__box:first-of-type {
+  border-bottom: 1px solid var(--middle-gray);
+}
+
+.account__item:focus {
+  outline: none;
+}
+.account__buttons {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.account__account {
+  color: var(--pink);
+  font-size: 13px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: normal;
+  text-align: center;
+  text-decoration: none;
+}
+
+.account__account:hover {
+  opacity: 0.8;
+}
+
+.account__save {
+  width: 100%;
+  max-width: 410px;
+  background-color: var(--blue);
+  color: var(--white);
+  padding: 13px 0 15px 0;
+  border-radius: 3px;
+}
+
+.account__save:hover {
+  opacity: 0.8;
+}
+
+.account__save_disabled {
+  background-color: #f8f8f8;
+  color: #c2c2c2;
+  cursor: none;
+}
+
+@media screen and (max-width: 768px) {
+  .account {
+    height: 917px;
+  }
+
+  .account__set {
+    margin: 96px 0 210px 0;
+  }
+}
+
+@media screen and (max-width: 450px) {
+  .account {
+    height: 738px;
+  }
+
+  .account__box {
+    width: 260px;
+  }
+
+  .account__set {
+    margin: 80px 0 379px 0;
+  }
+
+  .account__register {
+    font-size: 12px;
+  }
+
+  .account__account {
+    font-size: 12px;
+  }
+}

@@ -1,0 +1,153 @@
+.register {
+  display: flex;
+  height: 700px;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.register__header {
+  display: flex;
+  flex-direction: column;
+  max-width: 396px;
+  width: 100%;
+  justify-content: left;
+  gap: 40px;
+}
+
+.register__title {
+  font-size: 24px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: normal;
+  margin: 0;
+}
+
+.register__set {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  padding: 0;
+  border: none;
+  margin: 40px 0 90px 0;
+}
+
+.register__box {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  width: 396px;
+  position: relative;
+}
+
+.register__field {
+  font-size: 10px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+  color: var(--gray);
+  text-rendering: optimizeLegibility;
+}
+
+.register__item {
+  background-color: var(--button-gray);
+  font-size: 13px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+  text-rendering: optimizeLegibility;
+  border: none;
+  border-radius: 8px;
+  padding: 15px;
+  border-bottom: 1px solid transparent;
+}
+
+.register__item:focus {
+  outline: none;
+  border-bottom: 1px solid #3456f3;
+}
+
+.register__buttons {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  width: 100%;
+}
+
+.register__register {
+  background-color: var(--orange);
+  padding: 13px 0 15px 0;
+  color: var(--white);
+  text-align: center;
+  border-radius: 3px;
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: normal;
+}
+
+.register__register:hover {
+  opacity: 0.8;
+}
+
+.register__redirect {
+  display: flex;
+  justify-content: center;
+  gap: 6px;
+}
+
+.register__text {
+  margin: 0;
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+}
+
+.register__account {
+  text-decoration: none;
+  padding: 0;
+  color: var(--orange);
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+}
+
+.login__account:hover {
+  opacity: 0.8;
+}
+
+@media screen and (max-width: 768px) {
+  .register {
+    height: 1020px;
+  }
+}
+
+@media screen and (max-width: 450px) {
+  .register {
+    height: 810px;
+  }
+
+  .register__box {
+    width: 260px;
+  }
+
+  .register__header {
+    justify-content: center;
+    align-items: center;
+  }
+
+  .register__set {
+    margin: 80px 0 179px 0;
+  }
+
+  .register__register {
+    font-size: 12px;
+  }
+
+  .register__text {
+    font-size: 12px;
+    color: var(--gray);
+  }
+}
